@@ -22,11 +22,29 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
     setFocused(false);
   });
 
+  // // const useClickEsc = () => {
+  // React.useEffect(() => {
+  //   const handleEsc = (event: KeyboardEvent) => {
+  //     if (event.key === 'Escape') {
+  //       setFocused(false);
+  //       setSearchQuery('');
+  //       setProducts([]);
+  //       document.removeEventListener('keydown', handleEsc);
+  //     }
+  //   };
+  //   // document.addEventListener('keydown', handleEsc);
+  //   // return () => document.removeEventListener('keydown', handleEsc);
+  // }, []);
+  // // };
+
   useDebounce(
-    () => {
-      Api.products.search(searchQuery).then((items) => {
-        setProducts(items);
-      });
+    async () => {
+      try {
+        const response = await Api.products.search(searchQuery);
+        setProducts(response);
+      } catch (error) {
+        console.log(error);
+      }
     },
     400,
     [searchQuery],

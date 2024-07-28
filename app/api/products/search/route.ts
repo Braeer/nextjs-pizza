@@ -23,7 +23,6 @@ export async function GET(req: NextRequest) {
     },
     take: 5,
   });
-  console.log(products, query);
 
   return NextResponse.json(products);
 }
