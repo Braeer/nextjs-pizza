@@ -7,6 +7,7 @@ export * from './filter-checkbox';
 export * from './filters';
 export * from './group-variants';
 export * from './header';
+export * from './ingredient-item';
 export * from './modals/choose-product-modal';
 export * from './pizza-image';
 export * from './product-card';
