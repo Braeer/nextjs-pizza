@@ -6,5 +6,6 @@ export * from './input';
 export * from './popover';
 export * from './radio-group';
 export * from './select';
+export * from './sheet';
 export * from './skeleton';
 export * from './slider';
