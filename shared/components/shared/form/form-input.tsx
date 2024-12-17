@@ -6,7 +6,7 @@ import { ClearButton } from '../clear-button';
 import { ErrorText } from '../error-text';
 import { RequiredSymbol } from '../required-symbol';
 
-interface Props {
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;
   required?: boolean;
